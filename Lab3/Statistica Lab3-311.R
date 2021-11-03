@@ -107,6 +107,7 @@ tosscoin(1)
 # Generalizati solutia pentru o v.a. ce ia valori de la 1 la n(cu n fixat)
 #iar probabilitatile sunt generate aleator folosind functia sample()
 prob <- c(1/2,1/3,1/6)
+sum(prob)
 probaba <- cumsum(prob[1:2])[2]  #sum(prob[1:2])
 probabb <- cumsum(prob[1:2])[2]
 probabc <- prob[3]/(prob[2]+prob[3])

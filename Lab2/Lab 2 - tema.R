@@ -26,7 +26,7 @@ vectorValori <- c(1:n)
 probabilitati <- sample(seq(0,1,0.002),n)
 probabilitati/sum(probabilitati)
 pb2 <- probspace(vectorValori,probabilitati)
-
+sum(sample(seq(0,1,0.002),n))
 Prob(pb2,x<2.7)
 Prob(pb2,x<3 & x>0.5)
 Prob(pb2,x>2,x>1 )
