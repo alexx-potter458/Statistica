@@ -23,7 +23,7 @@ t <- seq(min(y),max(y),0.001)
 lines(t,dexp(t,lambda),col="blue")
 y1 <- rexp(n,lambda)
 #hist(y1)
-hist(y1,add=T,col="blue",freq=F)
+hist(-y1,add=T,col="blue",freq=F)
 
 #TEMA: Construiti un algoritm care simuleaza 10^6 valori din repartitia
 #lucrata in exemplul cu metoda inversa
@@ -43,3 +43,4 @@ else x=val[5]
 prob_partiale <- cumsum(prob)
 
 #TEMA: Eficientizati cat de mult posibil algoritmul de mai sus
+
