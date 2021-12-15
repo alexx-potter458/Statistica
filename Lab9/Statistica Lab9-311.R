@@ -91,7 +91,7 @@ fbeta_n <- function(n)
   return(c(x,k))
 }
 
-fbeta_n(4)
+fbeta_n(10^4)
 #O imbunatatire ar fi sa concatenam x si k intr-o forma matriceala
 # Functiile rbind() si cbind()
 
@@ -200,7 +200,9 @@ f1 <- function(x)
 {
   10^6/336*x*(1-x)^3
 }
+
 t <- seq(0.8,1,0.001)
+
 hist(x,freq=F,col="green")
 lines(t,f1(t),col="red")
 
