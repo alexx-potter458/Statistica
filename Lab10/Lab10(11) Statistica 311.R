@@ -43,7 +43,7 @@ arunca <- function(n) {
 
 # sapply(1:10000, arunca) este echivalent cu apelul functiei arunca, pe rand, cu toate valorile
 # de la 1 la 10 000
-plot(sapply(10000:100000, arunca), type = "o", xlab = "numarul de aruncari", ylab = "media")
+plot(sapply(0:100000, arunca), type = "o", xlab = "numarul de aruncari", ylab = "media")
 #Functia abline deseneaza drepte orizontale(h=ceva) sau verticale(v=ceva) peste un grafic
 abline(h = 50.5, col = "red")
 
