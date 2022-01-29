@@ -1,3 +1,5 @@
+#Olaru Alexandru / Matei Elena / Negru Bogdan / Trache Andrei 
+
 a <- 0
 b <- 1
 c <- 1
