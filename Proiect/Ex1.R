@@ -1,17 +1,17 @@
 #Olaru Alexandru / Matei Elena / Negru Bogdan / Trache Andrei 
+#1
 
 a <- 0
 b <- 1
 c <- 1
-n <- 10^1
+iterations <- 10^9
 
-medie <- function() {
+average <- function() { #calculam numarul de elemente aleatorii necesare din (a,b) pentru a depasi c
   suma <- 0
   counter <- 0
   if(a+b >= 0) {
     while(suma <= c) {
       x <- runif(1, a, b)
-      print(suma)
       suma <- suma + x
       counter <- counter + 1
       
@@ -23,9 +23,16 @@ medie <- function() {
 }
 
 
-y <- sum(replicate(n,medie()))/n
+aproxK <- sum(replicate(iterations, average()))/iterations #calculam media 
 
-max(replicate(n,medie()))
 
-k <- (2*c/(a+b)) + 1
+################################################################################
+#2
 
+a <- 0
+b <- 1
+c <- 1
+exactK <- (2*c/(a+b)) + 1
+
+
+errorK <- (abs(exactK - aproxK)/exactK)*100

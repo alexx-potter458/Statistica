@@ -1,5 +1,4 @@
 #Olaru Alexandru / Matei Elena / Negru Bogdan / Trache Andrei 
-
 #1
 
 iterations <- 10^7 #numarul de persoane
@@ -30,16 +29,12 @@ runStages <- function() { #persoana isi parcurge etapele pana la esec
 totalTimes <- replicate(iterations,runStages()) #timpul T pentru fiecare persoana, ca vector
 averageTime <- sum(totalTimes)/iterations # media timpului necesar fiecarei persoane
 
-
 ################################################################################
-
 #3
 
 finishProb <- prod(alfa) #se inmultesc probabilitatile din alfa
 
-
 ################################################################################
-
 #4
 
 sigma <- runif(1, min(Ti), max(Ti)) #generam un timp aleator
@@ -65,18 +60,14 @@ if(sigma >= Ti[1]) { #daca sigma e prea mic atunci nu se termian prima etapa
   
 }
 
-
 ################################################################################
-
 #5
 
 minTime <- min(totalTimes) #timpul minim
 maxTime <- max(totalTimes) #timpul maxim
 hist(totalTimes)
 
-
 ################################################################################
-
 #6
 
 k <- 5
