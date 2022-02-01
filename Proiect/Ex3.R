@@ -1,21 +1,39 @@
 #Olaru Alexandru / Matei Elena / Negru Bogdan / Trache Andrei 
-#1
 
 require("ConvergenceConcepts")
 
+#1
+
 n <- 1000
 
-pnotrgen<-function(n){ rbeta(n, 1/n, 1/n)}
-data <- check.convergence(nmax=n, M = 5000, genXn=pnotrgen,mode="p")
+valuesGenBeta <- function(n) {rbeta(n, 1/n, 1/n)}
+valuesGenBin  <- function(n) {rbinom(n, 1, 1/2)}
 
-pnotrgen<-function(n){ rbinom(n, 1, 1/2)}
-data <- check.convergence(nmax=2, M = 5000, genXn=pnotrgen,mode="p")
+dataBetaL <- check.convergence(nmax = n, M = 5000, genXn = valuesGenBeta, mode = "L")
+dataBinL  <- check.convergence(nmax = 2, M = 5000, genXn = valuesGenBin,  mode = "L")
 
-a <- 100
-b <- 100.5
+a <- runif(1, 0, 100)
+b <- runif(1, 0, 100)
 
-pnotrgen<-function(n){ rbeta(n, a/n, b/n)}
-data <- check.convergence(nmax=n, M = 5000, genXn=pnotrgen,mode="p")
+valuesGenBetaC <- function(n) {rbeta(n, a/n, b/n)}
 
-pnotrgen<-function(n){ rbinom(n, 1, 1/2)}
-data <- check.convergence(nmax=2, M = 5000, genXn=pnotrgen,mode="p")
+dataBetaLC <- check.convergence(nmax = n, M = 5000, genXn = valuesGenBetaC, mode = "L")
+dataBinL   <- check.convergence(nmax = 2, M = 5000, genXn = valuesGenBin,   mode = "L")
+
+
+#2
+valuesGenUnif <- function(n) {runif(n, 0, 1)}
+valuesGenUnifC <- function(n) { 
+  X <- c()
+  
+  for(i in 1:n) {
+    X  <- c(X,(runif(1, i/n, i/n)))
+  }
+  return(X)
+}
+
+dataUnifC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="L")
+dataUnif  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="L")
+
+
+
