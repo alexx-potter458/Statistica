@@ -167,8 +167,15 @@ valuesGenUnifC <- function(n) {
   return(X)
 }
 
-dataUnifC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="L")
-dataUnif  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="L")
+dataUnifLC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="L")
+dataUnifL  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="L")
+
+dataUnifPC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="p")
+dataUniPL  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="p")
+
+
+## 3.
+
 
 
 # IV.)
