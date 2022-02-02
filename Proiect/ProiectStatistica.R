@@ -151,18 +151,18 @@ require("ConvergenceConcepts")
 n <- 1000
 
 valuesGenBeta <- function(n) {rbeta(n, 1/n, 1/n)}
-valuesGenBin  <- function(n) {rbinom(n, 1, 1/2)}
+valuesGenBin  <- function(n) {rbinom(1, 1, 1/2)}
 
-dataBetaL <- check.convergence(nmax = n, M = 5000, genXn = valuesGenBeta, mode = "L")
-dataBinL  <- check.convergence(nmax = 2, M = 5000, genXn = valuesGenBin,  mode = "L")
+dataBetaL <- check.convergence(nmax = n, M = 500, genXn = valuesGenBeta, mode = "L")
+dataBinL  <- check.convergence(nmax = 2, M = 500, genXn = valuesGenBin,  mode = "L")
 
 a <- runif(1, 0, 100)
 b <- runif(1, 0, 100)
 
 valuesGenBetaC <- function(n) {rbeta(n, a/n, b/n)}
 
-dataBetaLC <- check.convergence(nmax = n, M = 5000, genXn = valuesGenBetaC, mode = "L")
-dataBinL   <- check.convergence(nmax = 2, M = 5000, genXn = valuesGenBin,   mode = "L")
+dataBetaLC <- check.convergence(nmax = n, M = 500, genXn = valuesGenBetaC, mode = "L")
+dataBinL   <- check.convergence(nmax = 2, M = 500, genXn = valuesGenBin,   mode = "L")
 
 
 ## 2.
@@ -176,11 +176,11 @@ valuesGenUnifC <- function(n) {
   return(X)
 }
 
-dataUnifLC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="L")
-dataUnifL  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="L")
+dataUnifLC <- check.convergence(nmax=n, M = 500, genXn=valuesGenUnifC, mode="L")
+dataUnifL  <- check.convergence(nmax=2, M = 500, genXn=valuesGenUnif,  mode="L")
 
-dataUnifPC <- check.convergence(nmax=n, M = 5000, genXn=valuesGenUnifC, mode="p")
-dataUniPL  <- check.convergence(nmax=2, M = 5000, genXn=valuesGenUnif,  mode="p")
+dataUnifPC <- check.convergence(nmax=n, M = 500, genXn=valuesGenUnifC, mode="p")
+dataUniPL  <- check.convergence(nmax=2, M = 500, genXn=valuesGenUnif,  mode="p")
 
 
 ## 3.
